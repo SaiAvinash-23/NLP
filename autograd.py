@@ -24,6 +24,11 @@ a = torch.sigmoid(n)
 #
 loss = F.binary_cross_entropy(a, y)
 
+# Should the manual calculation of gradients be eliminated, use the inbuilt backward function
+# loss.backward()
+# print(w1.grad)
+# print(b.grad)
+
 #
 grad_loss_w1 = grad(loss, w1, retain_graph=True)
 grad_loss_b = grad(loss, b, retain_graph=True)
